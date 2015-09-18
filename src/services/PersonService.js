@@ -1,9 +1,10 @@
 'use strict';
 import {Person} from '../entities/Person';
 
-export class PersonService{
+class PersonService{
     
     constructor(){
+        console.log("Creating new PersonService");
         this.people = {};
     }
     
@@ -17,3 +18,5 @@ export class PersonService{
     }
     
 }
+var instance = new PersonService()
+export default instance;

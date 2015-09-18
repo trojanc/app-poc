@@ -2,9 +2,13 @@
 
 import {PersonService} from '../services/PersonService';
 
-export class PersonRestService{
+class PersonRestService{
     
     constructor(app){
+        console.log("constructor PersonRestService");
+    }
+    
+    init(app){
         console.log("Adding Person rest services");
         this.addRoutes(app);
     }
@@ -21,3 +25,5 @@ export class PersonRestService{
     }
     
 }
+var instance = new PersonRestService();
+export default instance;

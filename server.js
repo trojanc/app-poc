@@ -5,10 +5,7 @@ var app = express();
 app.use(bodyParser());
 app.use(express.static('.'));
 
-var RestServices = require('./lib/rest/RestServices').RestServices;
-
-
-RestServices = new RestServices(app);
+var RestServices = require('./lib/rest/RestServices').initialise(app);
 
 app.get('/', function (request, response) {
   

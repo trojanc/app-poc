@@ -1,11 +1,18 @@
 'use strict';
 import {PersonRestService} from './PersonRestService';
 
-export class RestServices{
+class RestServices{
     
-    constructor(app){
-        console.log("Adding rest services");
-        new PersonRestService(app);
+    constructor(){
+        console.log("constructor RestServices");
+        
+    }
+    
+    initialise(app){
+        console.log("Initialising RestServices");
+        PersonRestService.initialise(app);
     }
     
 }
+var instance = new RestServices();
+export default instance;
