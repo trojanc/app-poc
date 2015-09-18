@@ -15,4 +15,6 @@ class RestServices{
     
 }
 var instance = new RestServices();
-export default instance;
+export function service(){
+	return instance;
+}

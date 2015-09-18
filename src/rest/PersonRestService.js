@@ -26,4 +26,6 @@ class PersonRestService{
     
 }
 var instance = new PersonRestService();
-export default instance;
+export  function service(){
+    return instance;
+}
