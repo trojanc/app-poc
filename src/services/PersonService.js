@@ -1,22 +1,21 @@
 'use strict';
-import {Person} from '../entities/Person';
+var Person = require('../entities/Person');
 
-class PersonService{
-    
-    constructor(){
-        console.log("Creating new PersonService");
-        this.people = {};
-    }
-    
-    addPerson(name, surname){
-        this.people[name] = new Person(name, surname);
-    }
-    
-    
-    getPerson(name){
-        return this.people[name];
-    }
-    
+function PersonService(){
+    console.log("Creating new PersonService");
+    this.people = {};
 }
-var instance = new PersonService()
-export default instance;
+
+
+PersonService.prototype.addPerson = function (name, surname){
+    var person = new Person(name, surname)
+    this.people[name] = person;
+    return person;
+}
+    
+    
+PersonService.prototype.getPerson = function(name){
+    return this.people[name] || new Person();
+}
+
+module.exports = new PersonService();

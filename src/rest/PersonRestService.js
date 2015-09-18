@@ -1,31 +1,39 @@
 'use strict';
 
-import {PersonService} from '../services/PersonService';
+var PersonService = require('../services/PersonService');
 
-class PersonRestService{
-    
-    constructor(app){
-        console.log("constructor PersonRestService");
-    }
-    
-    init(app){
-        console.log("Adding Person rest services");
-        this.addRoutes(app);
-    }
-    
-    findPerson(req, res){
-        console.log("need to find person");
-    }
-    
-    /**
-     * Add the routes to the app
-     **/
-    addRoutes(app){
-        app.get('/person', this.findPerson);
-    }
-    
+function PersonRestService(){
+    console.log("constructor PersonRestService");
 }
-var instance = new PersonRestService();
-export  function service(){
-    return instance;
+
+PersonRestService.prototype.initialise = function(app){
+    console.log("Adding Person rest services");
+    this.addRoutes(app);
 }
+    
+PersonRestService.prototype.findPerson = function(req, res){
+    var person = PersonService.getPerson();
+    
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(person));
+}
+
+PersonRestService.prototype.addPerson = function(req, res){
+    var name = req.body.name;
+    var surname = req.body.surname;
+    
+    var person = PersonService.addPerson(name, surname);
+    
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(person));
+}
+
+/**
+ * Add the routes to the app
+ **/
+PersonRestService.prototype.addRoutes = function(app){
+    app.get('/person', this.findPerson);
+    app.post('/person', this.addPerson);
+}
+
+module.exports = new PersonRestService();

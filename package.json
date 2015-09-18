@@ -2,10 +2,10 @@
   "name": "AppPoc",
   "version": "0.0.1",
   "devDependencies": {
-    "body-parser": "^1.10.1",
+    "body-parser": "^1.5.2",
+    "multer": "^0.1.3",
     "express": "^4.10.6",
     "gulp": "^3.9.0",
-    "gulp-babel": "^5.2.1",
     "gulp-express": "^0.3.5"
   }
 }

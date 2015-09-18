@@ -1,11 +1,17 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var multer = require('multer');
+
+
 
 var app = express();
-app.use(bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(multer());
 app.use(express.static('.'));
 
-var RestServices = require('./lib/rest/RestServices').initialise(app);
+var RestServices = require('./src/rest/RestServices');
+RestServices.initialise(app);
 
 app.get('/', function (request, response) {
   

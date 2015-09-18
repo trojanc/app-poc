@@ -1,20 +1,13 @@
 'use strict';
-import {PersonRestService} from './PersonRestService';
+var PersonRestService = require('./PersonRestService');
 
-class RestServices{
-    
-    constructor(){
-        console.log("constructor RestServices");
-        
-    }
-    
-    initialise(app){
-        console.log("Initialising RestServices");
-        PersonRestService.initialise(app);
-    }
-    
+function RestServices(){
+    console.log("constructor RestServices");
 }
-var instance = new RestServices();
-export function service(){
-	return instance;
+    
+RestServices.prototype.initialise = function(app){
+    console.log("Initialising RestServices");
+    PersonRestService.initialise(app);
 }
+
+module.exports = new RestServices();
