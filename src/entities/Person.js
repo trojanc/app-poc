@@ -6,14 +6,9 @@ export class Person{
         this.surname=surname;
     }
     
-    getName(){
-        return this.name;
+    toString(){
+        return this.name + " " + this.surname;
     }
-    
-    getSurname(){
-        return this.surname;
-    }
-    
     
     
 }

@@ -5,18 +5,14 @@ var app = express();
 app.use(bodyParser());
 app.use(express.static('.'));
 
-var PersonService = require('./lib/services/PersonService').PersonService;
-PersonService = new PersonService();
+var RestServices = require('./lib/rest/RestServices').RestServices;
+
+
+RestServices = new RestServices(app);
 
 app.get('/', function (request, response) {
   
-    console.log("got person:" + PersonService.getPerson());
     response.sendfile('index.html');
-});
-
-app.get('/test', function (request, response) {
-  
-    console.log("got person:" + JSON.stringify(PersonService.getPerson()));
 });
 
 
