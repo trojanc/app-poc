@@ -18,4 +18,8 @@ PersonService.prototype.getPerson = function(name){
     return this.people[name] || new Person();
 }
 
+PersonService.prototype.getAll = function(name){
+    return this.people;
+}
+
 module.exports = new PersonService();
