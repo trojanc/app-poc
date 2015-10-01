@@ -1,0 +1,1 @@
+http://www.clock.co.uk/blog/how-to-create-a-private-npmjs-repository

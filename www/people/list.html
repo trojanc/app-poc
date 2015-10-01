@@ -2,16 +2,55 @@
 <html>
     <head>
         <title>Add a person</title>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
         <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
-        
-        <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        
-        
-        <script type="text/javascript" src="/www/js/people/people.factory.rest.js"></script>
-        <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <script type="text/javascript" src="/bower_components/materialize/dist/js/materialize.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/bower_components/materialize/dist/css/materialize.min.css" />
+        <script type="text/javascript" src="/application.js"></script>
     </head>
-    <body ng-app="peopleApp" ng-controller="ListPeopleController">
-       <div ng-repeat="person in people">{{person.name}} {{person.surname}}</div>
+    <body  ng-app="appPoc" ng-controller="ListPeopleController">
+        <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Registered People</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">These people wanted to give your application a try!</h5>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+        <div class="container">
+        <div class="row"  ng-repeat="person in people">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">{{person.name}} {{person.surname}}</span>
+              <p>Blah blah this is a person</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+  </div>
     </body>
 </html>

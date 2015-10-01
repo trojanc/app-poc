@@ -13,9 +13,17 @@ app.use(express.static('.'));
 var RestServices = require('./src/rest/RestServices');
 RestServices.initialise(app);
 
+app.get('/application.js', function (request, response) {
+  
+  // If we are in dev mode, send the un-minified version
+  
+  // Else in prod send minified version
+    response.sendFile(__dirname + '/dist/application.js');
+});
+
 app.get('/', function (request, response) {
   
-    response.sendfile('index.html');
+    response.sendFile('index.html');
 });
 
 
