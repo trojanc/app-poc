@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add a person</title>
+        <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+        
+        <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        
+        
+        <script type="text/javascript" src="/www/js/people/people.app.js"></script>
+        <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    </head>
+    <body ng-app="peopleApp" ng-controller="ListPeopleController">
+       <div ng-repeat="person in people">{{person.name}} {{person.surname}}</div>
+    </body>
+</html>
