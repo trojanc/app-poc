@@ -1,8 +1,8 @@
 'use strict';
 
-function Person(){
-    this.name="uknown";
-    this.surname="uknown";
+function Person(name, surname){
+    this.name=name;
+    this.surname=surname;
 }
 
 Person.prototype.toString = function(){
