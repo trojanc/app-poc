@@ -1,1 +1,6 @@
 http://www.clock.co.uk/blog/how-to-create-a-private-npmjs-repository
+http://www.mircozeiss.com/using-csrf-with-express-and-angular/
+https://underthehood.myob.com/changing-of-the-guard-in-web-technologies/
+
+! GOOD!
+http://cameronjroe.com/writing/code/angular-movie-search/

@@ -1,25 +1,17 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var multer = require('multer');
+var express = require('express'),
+    bodyParser = require('body-parser'),
+    multer = require('multer'),
+    app = express();
 
 
-
-var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(multer());
-app.use(express.static('.'));
+app.use(express.static('dist'));
 
 var RestServices = require('./src/rest/RestServices');
 RestServices.initialise(app);
 
-app.get('/application.js', function (request, response) {
-  
-  // If we are in dev mode, send the un-minified version
-  
-  // Else in prod send minified version
-    response.sendFile(__dirname + '/dist/application.js');
-});
 
 app.get('/', function (request, response) {
   
