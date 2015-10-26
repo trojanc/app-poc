@@ -1,6 +1,8 @@
 import angular from 'angular';
 
 import PersonCtrl from './controllers/person';
+import PeopleListCtrl from './controllers/PeopleListCtrl';
+import PeopleAddCtrl from './controllers/PeopleAddCtrl';
 import personWidget from './directives/person';
 
 var people = 'people';
@@ -12,7 +14,9 @@ var directives = 'people.directives';
  * Controllers
  */
 angular.module(controllers, [])
-  .controller('PersonCtrl', PersonCtrl);
+  .controller('PersonCtrl', PersonCtrl)
+  .controller('PeopleListCtrl', PeopleListCtrl)
+  .controller('PeopleAddCtrl', PeopleAddCtrl);
 
 /**
  * Directives

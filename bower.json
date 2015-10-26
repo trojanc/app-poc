@@ -19,8 +19,6 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.4.7",
-    "angular-route": "~1.4.7",
-    "materialize": "~0.97.1"
+    "jquery": "~2.1.4"
   }
 }

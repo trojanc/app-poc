@@ -14,6 +14,7 @@ var minifyCss  = require('gulp-minify-css');
 var minifyHtml = require('gulp-minify-html');
 var browserSync = require('browser-sync');
 var karma      = require('gulp-karma');
+var rev         = require('gulp-rev');
 
 var config = {
     app: 'app'
@@ -61,7 +62,8 @@ gulp.task('usemin', ['clean', 'styles'], function () {
     return gulp.src('./app/*.html')
         .pipe(usemin({
             html: [minifyHtml()],
-            css: [minifyCss()]
+            css: [minifyCss()],
+            js: [ /*uglify,*/ rev() ]
         }))
         .pipe(gulp.dest('./dist'));
 });
@@ -99,10 +101,11 @@ gulp.task('test', function() {
 // -------------------------------------------------
 // Watchers
 // -------------------------------------------------
-gulp.task('watch', ['browserSync'], function() {
+gulp.task('watch'/*, ['browserSync']*/, function() {
     gulp.watch([
         'app/scripts/**/*.js',
-        'app/styles/**/*.scss'
+        'app/styles/**/*.scss',
+        'app/**/*.html'
     ], ['pipeline']);
 });
 

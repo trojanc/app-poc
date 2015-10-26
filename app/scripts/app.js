@@ -5,6 +5,12 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import ngSanitize from 'angular-sanitize';
+import ngAnimate from 'angular-animate';
+import ngAria from 'angular-aria';
+import ngMaterial from 'angular-material';
+
+
+
 import {
     services,
     controllers,
@@ -12,7 +18,8 @@ import {
     config
 } from './app.config';
 
-import people from './modules/people/module';
+import people from './modules/people';
+import base from './modules/base';
 
 var movieSearch = 'movieSearch';
 var appConfig = ($stateProvider, $urlRouterProvider) => {
@@ -21,19 +28,11 @@ var appConfig = ($stateProvider, $urlRouterProvider) => {
         /**
          * Search a Movie
          */
-        .state('search', {
+        .state('home', {
             url: '/',
-            templateUrl: 'views/search-results.html',
-            controller: 'SearchCtrl'
+            templateUrl: 'views/home.html',
+            controller: 'HomeCtrl'
         })
-        /**
-         * View Movie Details
-         */
-        .state('details', {
-            url: '/details/:id',
-            templateUrl: 'views/details.html',
-            controller: 'DetailsCtrl'
-        });
 
     $urlRouterProvider.otherwise('/');
 };
@@ -42,11 +41,15 @@ appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 angular.module(movieSearch, [
     uiRouter,
+    ngAnimate,
     ngSanitize,
+    ngAria,
+    ngMaterial,
     config,
     services,
     controllers,
     directives,
+    base,
     people
 ]).config(appConfig);
 

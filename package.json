@@ -8,12 +8,15 @@
     "gulp": "^3.9.0",
     "gulp-express": "^0.3.5",
     "multer": "^0.1.8",
-    "angular": "^1.5.0-beta",
-    "angular-sanitize": "^1.5.0-beta",
+    "angular": "~1.4.7",
+    "angular-sanitize": "~1.4.7",
     "angular-ui-router": "^0.2.15"
   },
   "devDependencies": {
-    "angular-mocks": "^1.5.0-beta",
+    "angular-animate": "^1.4.7",
+    "angular-aria": "^1.4.7",
+    "angular-material": "^0.11.4",
+    "angular-mocks": "~1.4.7",
     "babel": "^5.8.23",
     "babel-runtime": "^5.8.24",
     "babelify": "^6.3.0",
@@ -29,6 +32,7 @@
     "gulp-minify-css": "^1.2.1",
     "gulp-minify-html": "^1.0.4",
     "gulp-ng-annotate": "^1.1.0",
+    "gulp-rev": "^6.0.1",
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.4.1",
@@ -43,7 +47,7 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
-   "browserify": {
+  "browserify": {
     "transform": [
       "babelify"
     ]
@@ -58,7 +62,7 @@
   },
   "description": "Proof of concept for some ideas",
   "main": "gulpfile.js",
-   "repository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/trojanc/app-poc"
   },

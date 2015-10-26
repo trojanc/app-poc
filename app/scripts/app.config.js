@@ -21,7 +21,6 @@ import SearchCtrl from './controllers/search';
  * Directives
  */
 import SearchInput from './directives/search-input';
-import personWidget from './modules/people/directives/person';
 
 
 // ------------------------------------------------
