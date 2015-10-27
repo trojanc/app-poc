@@ -3,16 +3,19 @@
 /**
  * Search Controller
  */
-var PersonRestService = (RestServiceBase) => {
+var PersonRestService = (BaseRestService) => {
    
    	return angular.extend({
 		'getAll' : function() {
 			return this._callService('GET', 'person');
+		},
+		'create' : function(person){
+			return this._callService('POST', 'person', person);
 		}
-	}, RestServiceBase);
+	}, BaseRestService);
    
 };
 
-PersonRestService.$inject = ["RestServiceBase"];
+PersonRestService.$inject = ["BaseRestService"];
 
 export default PersonRestService;

@@ -3,13 +3,13 @@
 /**
  * Search Controller
  */
-var PeopleListCtrl = ($scope, PersonRestService) => {
+var PeopleListCtrl = ($scope, Person) => {
    	
-   	PersonRestService.getAll().then(function(people){
-		$scope.people = people;
+   	$scope.people = Person.query(function(){
+		console.log("Got people");
 	});
 };
 
-PeopleListCtrl.$inject = ["$scope", "PersonRestService"];
+PeopleListCtrl.$inject = ["$scope", "Person"];
 
 export default PeopleListCtrl;

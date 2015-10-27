@@ -4,6 +4,7 @@
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import ngResource from 'angular-resource';
 import ngSanitize from 'angular-sanitize';
 import ngAnimate from 'angular-animate';
 import ngAria from 'angular-aria';
@@ -32,7 +33,7 @@ var appConfig = ($stateProvider, $urlRouterProvider) => {
             url: '/',
             templateUrl: 'views/home.html',
             controller: 'HomeCtrl'
-        })
+        });
 
     $urlRouterProvider.otherwise('/');
 };
@@ -45,6 +46,7 @@ angular.module(movieSearch, [
     ngSanitize,
     ngAria,
     ngMaterial,
+    ngResource,
     config,
     services,
     controllers,

@@ -41,7 +41,7 @@ PersonRestService.prototype.addPerson = function(req, res){
  * Add the routes to the app
  **/
 PersonRestService.prototype.addRoutes = function(app){
-    app.get('/rest/person/:name', this.findPerson);
+    app.get('/rest/person/:id', this.findPerson);
     app.get('/rest/person', this.getAll);
     app.post('/rest/person', this.addPerson);
 }

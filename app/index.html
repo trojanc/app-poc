@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css">
-    <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="styles/app-poc.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -25,16 +25,7 @@
         </div>
     </md-toolbar>
     <md-sidenav md-component-id="left" class="md-sidenav-left">
-        <md-list>
-            <md-list-item class="md-2-line" ng-repeat="item in menuItems">
-                <md-checkbox ng-model="item.done"></md-checkbox>
-                <div class="md-list-item-text">
-                    <h3>{{item.title}}</h3>
-                    <p>{{item.description}}</p>
-                </div>
-                <person-widget></person-widget>
-            </md-list-item>
-        </md-list>
+        <app-menu></app-menu>
     </md-sidenav>
     <md-content>
         <div layout="row">

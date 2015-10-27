@@ -1,0 +1,17 @@
+<md-content layout-padding>
+  <form name="userForm">
+    <div layout layout-sm="column">
+      <md-input-container flex>
+        <label>First name</label>
+        <input ng-model="person.name">
+      </md-input-container>
+      <md-input-container flex>
+        <label>Last Name</label>
+        <input ng-model="person.surname">
+      </md-input-container>
+    </div>
+    <div>
+      <md-button class="md-raised md-primary" ng-click="create()">Create</md-button>
+    </div>
+  </form>
+</md-content>
