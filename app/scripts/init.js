@@ -5,8 +5,8 @@
  */
 
 import angular from 'angular';
-import movieSearch from './app';
+import appPoc from './app';
 
 angular.element(document).ready(function () {
-  angular.bootstrap(document, [movieSearch]);
+  angular.bootstrap(document, [appPoc]);
 });

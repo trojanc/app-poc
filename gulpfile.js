@@ -5,7 +5,7 @@ var concat     = require('gulp-concat');
 var usemin     = require('gulp-usemin');
 var source     = require('vinyl-source-stream');
 var buffer     = require('vinyl-buffer');
-var clean      = require('gulp-clean');
+var rimraf      = require('rimraf');
 var browserify = require('browserify');
 var ngAnnotate = require('gulp-ng-annotate');
 var sass       = require('gulp-sass');
@@ -22,7 +22,7 @@ var config = {
 
 // Styles
 // ----------------------------------------
-gulp.task('styles', function() {
+gulp.task('styles',['clean'], function() {
     return gulp.src('app/styles/**/*.scss')
         .pipe(sourcemaps.init())
             .pipe(sass())
@@ -51,9 +51,8 @@ gulp.task('browserSync', function () {
 
 // Clean
 // ----------------------------------------
-gulp.task('clean', function () {
-    return gulp.src('./dist')
-        .pipe(clean());
+gulp.task('clean', function (cb) {
+    rimraf('./dist',cb);
 });
 
 // 
@@ -82,7 +81,7 @@ gulp.task('pipeline', ['usemin'], function () {
         })
         .pipe(source('bundle.min.js'))
         .pipe(buffer())
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('./dist/scripts'));
 });
 

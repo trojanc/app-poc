@@ -8,16 +8,14 @@ var PersonConfig = ($stateProvider, $urlRouterProvider) => {
          */
         .state('person', {
             url: '/person',
-            templateUrl: 'views/add.html',
+            templateUrl: 'views/people/add.html',
             controller: 'PeopleAddCtrl'
         })
         .state('people', {
             url: '/people',
-            templateUrl: 'views/list.html',
+            templateUrl: 'views/people/list.html',
             controller: 'PeopleListCtrl'
         });
-
-    $urlRouterProvider.otherwise('/');
 };
 
 PersonConfig.$inject = ['$stateProvider', '$urlRouterProvider'];

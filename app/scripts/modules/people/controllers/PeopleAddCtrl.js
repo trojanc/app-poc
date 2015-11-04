@@ -10,6 +10,7 @@ var PeopleAddCtrl = ($scope, Person, $mdToast) => {
 
     $scope.create = function() {
         $scope.person.$save(function() {
+            $scope.person = new Person();
             $mdToast.show(
                 $mdToast.simple()
                 .content('Person created')

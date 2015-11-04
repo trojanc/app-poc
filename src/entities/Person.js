@@ -1,12 +1,14 @@
 'use strict';
 
-function Person(name, surname){
-    this.name=name;
-    this.surname=surname;
-}
-
-Person.prototype.toString = function(){
-    return this.name + " " + this.surname;
-}
+export default class Person{
     
-module.exports = Person;
+    contructor(_id, _name, _surname){
+        this.id=_id;
+        this.name=_name;
+        this.surname=_surname;
+    }
+    
+    toString(){
+        return this.name + " " + this.surname;
+    }
+}

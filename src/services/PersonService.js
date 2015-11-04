@@ -1,25 +1,40 @@
 'use strict';
-var Person = require('../entities/Person');
+import Person from '../entities/Person';
 
-function PersonService(){
-    console.log("Creating new PersonService");
-    this.people = [];
-}
-
-
-PersonService.prototype.addPerson = function (name, surname){
-    var person = new Person(name, surname)
-    this.people.push(person);
-    return person;
-}
+class PersonService{
+    constructor(){
+        console.log("Creating new PersonService");
+        this.people = [];
+        this.nextId = 0;
+    }
     
     
-PersonService.prototype.getPerson = function(name){
-    return this.people[0] || new Person();
+    addPerson(name, surname){
+        var person = new Person(this.nextId++, name, surname)
+        this.people.push(person);
+        return person;
+    }
+    
+    getPerson (id){
+        for(var idx=0 ; idx<this.people.length ; idx++){
+            if(this.people[idx].id == id){
+                return this.people[idx];
+            }
+        }
+        return new Person();
+    }
+    
+    deletePerson(id){
+        for(var idx=0 ; idx<this.people.length ; idx++){
+            if(this.people[idx].id == id){
+                this.people.splice(idx, 1);
+            }
+        }
+    }
+    
+    getAll(){
+        return this.people;
+    }
 }
 
-PersonService.prototype.getAll = function(){
-    return this.people;
-}
-
-module.exports = new PersonService();
+export default new PersonService();

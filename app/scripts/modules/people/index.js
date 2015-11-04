@@ -6,7 +6,7 @@ import PeopleAddCtrl from './controllers/PeopleAddCtrl';
 import PeopleListCtrl from './controllers/PeopleListCtrl';
 
 // Directives
-import personWidget from './directives/person';
+import BusinessCard from './directives/BusinessCard';
 
 // Factories
 import PersonRestService from './factories/PersonRestService';
@@ -33,7 +33,7 @@ angular.module(controllers, [])
  * Directives
  */
 angular.module(directives, [])
-  .directive('personWidget', personWidget);
+  .directive('businessCard', BusinessCard);
   
 /**
  * Factories

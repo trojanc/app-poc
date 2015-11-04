@@ -1,7 +1,4 @@
-/**
- * Movie Search
- */
-
+// Angular dependencies
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import ngResource from 'angular-resource';
@@ -10,20 +7,12 @@ import ngAnimate from 'angular-animate';
 import ngAria from 'angular-aria';
 import ngMaterial from 'angular-material';
 
-
-
-import {
-    services,
-    controllers,
-    directives,
-    config
-} from './app.config';
-
+// User created dependencies
 import people from './modules/people';
 import base from './modules/base';
 
-var movieSearch = 'movieSearch';
-var appConfig = ($stateProvider, $urlRouterProvider) => {
+var appPoc = 'appPoc';
+var appConfig = ($stateProvider, $urlRouterProvider, $mdThemingProvider) => {
 
     $stateProvider
         /**
@@ -36,23 +25,21 @@ var appConfig = ($stateProvider, $urlRouterProvider) => {
         });
 
     $urlRouterProvider.otherwise('/');
+    
+     $mdThemingProvider.theme('default').primaryPalette('light-green');
 };
 
-appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+appConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$mdThemingProvider'];
 
-angular.module(movieSearch, [
+angular.module(appPoc, [
     uiRouter,
     ngAnimate,
     ngSanitize,
     ngAria,
     ngMaterial,
     ngResource,
-    config,
-    services,
-    controllers,
-    directives,
     base,
     people
 ]).config(appConfig);
 
-export default movieSearch;
+export default appPoc;
