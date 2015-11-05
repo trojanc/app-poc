@@ -15,6 +15,7 @@ var minifyHtml = require('gulp-minify-html');
 var browserSync = require('browser-sync');
 var karma      = require('gulp-karma');
 var rev         = require('gulp-rev');
+var babelify = require('babelify');
 
 var config = {
     app: 'app'
@@ -75,6 +76,7 @@ gulp.task('pipeline', ['usemin'], function () {
         .pipe(gulp.dest('dist'));
 
     return browserify('./app/scripts/init.js')
+        .transform(babelify)
         .bundle()
         .on('error', function (err) {
             console.log(err);
